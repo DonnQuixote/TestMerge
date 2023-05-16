@@ -16,3 +16,10 @@ git merge master --allow-unrelated-histories
 5.将合并后的分支推送到远程存储库：
 git push origin main
 
+6.该命令是把本地历史区的文件添加到github服务器的暂存区中。这一步是本地和远程服务器简历联系的第一步。
+git remote add origin 网址
+7.该命令是先把github上的文件拉下来 
+git pull origin master --allow-unrelated-histories
+8.真正向github提交
+git push -u origin master
+
