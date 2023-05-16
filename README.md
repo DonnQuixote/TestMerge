@@ -41,6 +41,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 之后git add README.md,git commit 可以完成合并操作
 最后执行git push origin main 将合并后的更改推送到远程仓库
+
 2.取消合并
 git merge --abort
 
