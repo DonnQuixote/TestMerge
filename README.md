@@ -1,6 +1,7 @@
 # TestMerge
 测试合并分支
 
+**合并**
 假设想要把master分支中的东西合并到main分支上面去：
 1.本地拉取最新更改
 git pull origin main
@@ -16,10 +17,30 @@ git merge master --allow-unrelated-histories
 5.将合并后的分支推送到远程存储库：
 git push origin main
 
+**与Github建立连接，上传项目**
 6.该命令是把本地历史区的文件添加到github服务器的暂存区中。这一步是本地和远程服务器简历联系的第一步。
-git remote add origin 网址
+git remote add origin github建立仓库的地址
 7.该命令是先把github上的文件拉下来 
 git pull origin master --allow-unrelated-histories
 8.真正向github提交
 git push -u origin master
+
+**冲突**
+1.冲突解决方案
+出现冲突时一般都有提示，比如下面的提示说README.md有问题
+CONFLICT (add/add): Merge conflict in README.md
+Auto-merging README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+这时候打开这个文件，就有冲突内容的显示，解决冲突后保存文件。
+<<<<<<< HEAD
+// 本地 main 分支的内容
+=======
+// master 分支的内容
+>>>>>>> master
+
+之后git add README.md,git commit 可以完成合并操作
+最后执行git push origin main 将合并后的更改推送到远程仓库
+2.取消合并
+git merge --abort
 
